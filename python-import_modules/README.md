@@ -6,6 +6,6 @@
 
 3-infinite_add.py = imprimer le résultat de l'addition de tous les arguments.
 
- = imprime tous les noms définis par le module compilé hidden_4.pyc.
+4-hidden_discovery.py = imprime tous les noms définis par le module compilé hidden_4.pyc.
 
 5-variable_load.py = importer la variable a du fichier variable_load_5.py et imprime sa valeur.
