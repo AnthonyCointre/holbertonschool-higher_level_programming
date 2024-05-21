@@ -1,0 +1,24 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Nothing special here")
+Nothing special here
+
+>>> text_indentation("It is not. Why it is? I don't know.")
+It is not.
+<BLANKLINE>
+Why it is?
+<BLANKLINE>
+I don't know.
+<BLANKLINE>
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(125)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(“Holberton. School? How are you: John”)
+Traceback (most recent call last):
+SyntaxError: invalid character '“' (U+201C)
