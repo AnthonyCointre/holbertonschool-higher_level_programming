@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-"""Adds 2 integers."""
-
-
 def add_integer(a, b=98):
     """
-    Add two integers or floats and return the result as an integer.
+    Function to add two integers or floats.
     """
 
     if not isinstance(a, (int, float)):
