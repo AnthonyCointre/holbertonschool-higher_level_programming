@@ -18,6 +18,9 @@ def text_indentation(text):
 
     for char in text:
         print(char, end='')
-
         if char in chars_to_indent:
-            print('\n\n', end='')
+            if char != text[-1] and text[text.index(char) + 1] != ' ':
+                print('\n\n', end='')
+
+            else:
+                print('\n', end='')
