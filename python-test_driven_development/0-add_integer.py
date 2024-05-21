@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""
+Module to adds 2 integers.
+"""
+
+
 def add_integer(a, b=98):
     """
-    Function to add two integers or floats.
+    Function to adds 2 integers.
     """
 
     if not isinstance(a, (int, float)):
