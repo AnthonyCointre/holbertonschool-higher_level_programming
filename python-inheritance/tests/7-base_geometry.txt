@@ -1,1 +1,33 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+#!/usr/bin/python3
+
+BaseGeometry = __import__('base_geometry').BaseGeometry
+
+# Instantiate the BaseGeometry class
+bg = BaseGeometry()
+print("BaseGeometry instance created.")
+
+# Test the area method
+try:
+    bg.area()
+except Exception as e:
+    print(e)  # Output: area() is not implemented
+
+# Test the integer_validator method with various inputs
+test_cases = [
+    ("age", "4"),    # String
+    ("age", (4,)),   # Tuple
+    ("age", [3]),    # List
+    ("age", True),   # Boolean
+    ("age", {3, 4}), # Set
+    ("age", None),   # None
+    ("age", 0),      # Zero
+    ("age", -4),     # Negative integer
+    ("age", 1)       # Positive integer
+]
+
+for name, value in test_cases:
+    try:
+        bg.integer_validator(name, value)
+        print(f"{name} = {value} is valid.")
+    except Exception as e:
+        print(e)
