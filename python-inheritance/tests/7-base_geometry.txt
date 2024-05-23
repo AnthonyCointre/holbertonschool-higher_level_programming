@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 BaseGeometry = __import__('base_geometry').BaseGeometry
 
 # Instantiate the BaseGeometry class
