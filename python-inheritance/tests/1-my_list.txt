@@ -8,6 +8,13 @@
 >>> print(my_list)
 [100]
 
+>>> my_list.append(50)
+>>> new_list = my_list.print_sorted()
+[50, 100]
+
 >>> my_list.append(-20)
 >>> print(my_list)
 [100, 50, -20]
+
+>>> my_list.print_sorted()
+[-20, 50, 100]
