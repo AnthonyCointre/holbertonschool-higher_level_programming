@@ -18,7 +18,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """
-        Validates value
+        Validates value.
         """
 
         if not isinstance(value, int):
@@ -43,6 +43,6 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """
-        Returns a string representation of the Rectangle
+        Returns a string representation of the Rectangle.
         """
         return f"[Rectangle] {self.__width}/{self.__height}"
