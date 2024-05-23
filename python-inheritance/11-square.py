@@ -17,6 +17,7 @@ class Square(Rectangle):
         Initializes a Square instance with a size.
         """
 
+        self.__size = size
         super().__init__(size, size)
 
     def __str__(self):
@@ -24,39 +25,11 @@ class Square(Rectangle):
         Returns a string representation of the square.
         """
 
-        return "[Square] {}/{}".format(self.width, self.height)
-
-    @property
-    def size(self):
-        """
-        Getter for size.
-        """
-
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """
-        Setter for size.
-        """
-
-        self.integer_validator("size", value)
-        self.width = value
-        self.height = value
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
     def area(self):
         """
         Calculate the area of the square.
         """
 
-        return self.width ** 2
-
-    def integer_validator(self, name, value):
-        """
-        Validate value.
-        """
-
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+        return self.__size ** 2
