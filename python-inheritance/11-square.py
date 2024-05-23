@@ -26,23 +26,6 @@ class Square(Rectangle):
 
         return "[Square] {}/{}".format(self.width, self.height)
 
-    @property
-    def size(self):
-        """
-        Retrieves the size of the square.
-        """
-
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """
-        Sets the size of the square.
-        """
-
-        self.width = value
-        self.height = value
-
     def area(self):
         """
         Calculate the area of the square.
