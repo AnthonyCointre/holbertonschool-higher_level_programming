@@ -17,7 +17,7 @@ class Square(Rectangle):
         Initializes a Square instance with a size.
         """
 
-        self.integer_validator("size", size)
+        self.__size = size
         super().__init__(size, size)
 
     def __str__(self):
@@ -31,6 +31,7 @@ class Square(Rectangle):
         """
         Calculate the area of the square.
         """
+
         return self.__size ** 2
 
     @property
@@ -38,4 +39,5 @@ class Square(Rectangle):
         """
         Getter for size.
         """
+
         return self.__size
