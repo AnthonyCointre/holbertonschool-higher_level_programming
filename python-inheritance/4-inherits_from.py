@@ -11,11 +11,7 @@ def inherits_from(obj, a_class):
     (directly or indirectly) from the specified class ; otherwise False.
     """
 
-    if isinstance(obj, a_class):
-        return False
-    for base in type(obj).__bases__:
-        if base == a_class:
-            return True
-        if inherits_from(base, a_class):
-            return True
-    return False
+    if type(obj) is not a_class and isinstance(obj, a_class):
+        return (True)
+    else:
+        return (False)
