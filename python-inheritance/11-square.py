@@ -25,7 +25,7 @@ class Square(Rectangle):
         Returns a string representation of the square.
         """
 
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
     def area(self):
         """
