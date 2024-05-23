@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A class Square that inherits from Rectangle (9-rectangle.py). (task based on 10-square.py).
+A class Square that inherits from Rectangle (9-rectangle.py).
 """
 
 Rectangle = __import__('9-rectangle').Rectangle
