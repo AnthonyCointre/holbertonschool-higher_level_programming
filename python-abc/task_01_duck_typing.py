@@ -18,7 +18,7 @@ Test the shape_info function with instances of both Circle and Rectangle.
 
 class Shape(ABC):
     """
-    Abstract class Shape using the ABC module to create abstract
+    An abstract class Shape using the ABC module to create abstract
     methods.
     """
 
@@ -102,7 +102,8 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """
-    Standalone function to print out the area and perimeter of a given shape.
+    A standalone function named shape_info that accepts an object of
+    type Shape (by duck typing) and prints its area and perimeter.
     """
 
     print("Area: {}".format(shape.area()))
