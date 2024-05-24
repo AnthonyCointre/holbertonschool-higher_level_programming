@@ -12,8 +12,7 @@ the strings “Bark” and “Meow” respectively.
 
 class Animal(ABC):
     """
-    Abstract class Animal using the ABC module
-    to create abstract methods.
+    An abstract class Animal to create abstract methods.
     """
 
     @abstractmethod
