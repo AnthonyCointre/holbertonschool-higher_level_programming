@@ -1,15 +1,13 @@
 #!/usr/bin/python3
+from abc import ABC, abstractmethod
 """
-An abstract class named Animal using the ABC package.
+Create an abstract class named Animal using the ABC package.
 This class should have an abstract method called sound.
 
-Two subclasses of Animal: Dog and Cat.
+Create two subclasses of Animal: Dog and Cat.
 Implement the sound method in each subclass to return
 the strings “Bark” and “Meow” respectively.
 """
-
-
-from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
@@ -20,6 +18,10 @@ class Animal(ABC):
 
     @abstractmethod
     def sound(self):
+        """
+        Abstract method that should be implemented by all subclasses of Animal.
+        """
+
         pass
 
 
@@ -29,6 +31,10 @@ class Dog(Animal):
     """
 
     def sound(self):
+        """
+        Implements the sound method for Dog.
+        """
+
         return "Bark"
 
 
@@ -38,4 +44,8 @@ class Cat(Animal):
     """
 
     def sound(self):
+        """
+        Implements the sound method for Cat.
+        """
+
         return "Meow"
