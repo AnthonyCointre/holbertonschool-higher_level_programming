@@ -1,0 +1,1 @@
+task_00_basic_serialization.py = un module de sérialisation de base qui ajoute la fonctionnalité permettant de sérialiser un dictionnaire Python dans un fichier JSON et de désérialiser le fichier JSON pour recréer le dictionnaire Python.
