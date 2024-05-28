@@ -22,7 +22,6 @@ class Student():
         self.last_name = last_name
         self.age = age
 
-
     def to_json(self, attrs=None):
         """
         Method that returns the dictionary representation
@@ -45,7 +44,6 @@ class Student():
                 dictionary[key] = value
 
         return (dictionary)
-
 
     def reload_from_json(self, json):
         """
