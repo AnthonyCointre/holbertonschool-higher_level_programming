@@ -23,6 +23,7 @@ class Student():
         self.last_name = last_name
         self.age = age
 
+
     def to_json(self, attrs=None):
         """
         Method that returns the dictionary representation
