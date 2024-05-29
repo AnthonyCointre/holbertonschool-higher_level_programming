@@ -1,4 +1,4 @@
-#!/usr/bin/python3*
+#!/usr/bin/python3
 """
 A basic serialization module that adds the functionality to serialize
 a Python dictionary to a JSON file and deserialize the JSON file
