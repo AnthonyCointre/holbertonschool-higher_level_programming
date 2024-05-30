@@ -14,7 +14,7 @@ Structure d'une Requête HTTP :
     Corps de la requête (facultatif) : Contient des données à envoyer au serveur (par exemple, des données de formulaire).
 
 Exemple de Requête HTTP
-    '''
+'''
     GET /index.html HTTP/1.1
     Host: www.example.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
@@ -22,7 +22,7 @@ Exemple de Requête HTTP
     Accept-Language: en-US,en;q=0.5
     Accept-Encoding: gzip, deflate
     Connection: keep-alive
-    '''
+'''
 
 Structure d'une Réponse HTTP
     Ligne de statut : Indique la version du protocole, le code d'état, et une phrase de statut.
@@ -30,7 +30,7 @@ Structure d'une Réponse HTTP
     Corps de la réponse (facultatif) : Contient les données renvoyées au client (par exemple, le contenu d'une page web).
 
 Exemple de Réponse HTTP
-    '''
+'''
     HTTP/1.1 200 OK
     Date: Mon, 31 May 2024 12:34:56 GMT
     Server: Apache/2.4.41 (Ubuntu)
@@ -38,7 +38,7 @@ Exemple de Réponse HTTP
     Content-Length: 137
     Content-Type: text/html; charset=UTF-8
     Connection: Closed
-    '''
+'''
 
 3.
 Liste des méthodes courantes HTTP :
