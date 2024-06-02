@@ -55,14 +55,17 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b'404 Not Found')
 
 
-if __name__ == "__main__":
-    def run(server_class=HTTPServer,
-            handler_class=SimpleHTTPRequestHandler,
-            port=8000):
-        """
-        Run the HTTP server.
-        """
+def run(server_class=HTTPServer,
+        handler_class=SimpleHTTPRequestHandler,
+        port=8000):
+    """
+    Run the HTTP server.
+    """
 
-        server_address = ('localhost', port)
-        httpd = server_class(server_address, handler_class)
-        httpd.serve_forever()
+    server_address = ('localhost', port)
+    httpd = server_class(server_address, handler_class)
+    httpd.serve_forever()
+
+
+if __name__ == "__main__":
+    run()
