@@ -55,8 +55,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b'404 Not Found')
 
 
-def run(
-        server_class=HTTPServer,
+def run(server_class=HTTPServer,
         handler_class=SimpleHTTPRequestHandler,
         port=8000):
     """
