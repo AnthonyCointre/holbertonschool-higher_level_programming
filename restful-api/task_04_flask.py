@@ -9,9 +9,7 @@ Handle POST requests to add new data to the API.
 
 from flask import Flask, jsonify, request
 
-
 app = Flask(__name__)
-
 
 users = {}
 
@@ -19,25 +17,26 @@ users = {}
 @app.route('/')
 def home():
     """
-    Route for the root URL.
+    Root endpoint that returns a welcome message.
     """
 
     return "Welcome to the Flask API!"
 
 
 @app.route('/data')
-def get_usernames():
+def json_data():
     """
-    Route to get a list of all usernames stored in the API.
+    Endpoint that returns a JSON list of usernames.
     """
 
-    return jsonify(list(users.keys()))
+    usernames = list(users.keys())
+    return jsonify(usernames)
 
 
 @app.route('/status')
 def status():
     """
-    Route to check the status of the API.
+    Endpoint that returns a simple status message to indicate the server is running.
     """
 
     return "OK"
@@ -46,7 +45,7 @@ def status():
 @app.route('/users/<username>')
 def get_user(username):
     """
-    Route to get user details by username.
+    Endpoint to retrieve data for a specific user by username.
     """
 
     user = users.get(username)
@@ -56,21 +55,19 @@ def get_user(username):
         return jsonify({"error": "User not found"}), 404
 
 
-@app.route('/add_user', methods=['POST'])
+@app.route('/add_user', methods=["POST"])
 def add_user():
     """
-    Route to add a new user.
+    Endpoint to add a new user via a POST request.
     """
 
-    user_data = request.get_json()
-    username = user_data.get('username')
-
-    if not username or username in users:
-        return jsonify({"error": "Invalid username"}), 400
-
-    users[username] = user_data
-    return jsonify({"message": "User added", "user": user_data}), 201
+    new_user = request.get_json()
+    username = new_user.get("username")
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    users[username] = new_user
+    return jsonify({"message": "User added", "user": new_user}), 201
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
