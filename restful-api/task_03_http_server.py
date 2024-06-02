@@ -66,7 +66,7 @@ def run(
     Run the HTTP server.
     """
 
-    server_address = ('', port)
+    server_address = ('localhost', port)
     httpd = server_class(server_address, handler_class)
     print(f'Starting httpd server on port {port}...')
     httpd.serve_forever()
