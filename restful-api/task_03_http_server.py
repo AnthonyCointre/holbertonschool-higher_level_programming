@@ -47,3 +47,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header('content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b'404 Not Found')
+
+
+if __name__ == "__main__":
+    httpd = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
+    print("serving at port", 8000)
+    httpd.serve_forever()
