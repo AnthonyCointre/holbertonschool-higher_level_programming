@@ -9,6 +9,7 @@ import http.server
 import socketserver
 import json
 
+
 PORT = 8000
 
 
@@ -21,6 +22,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         """
         Handle GET requests.
         """
+
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
@@ -55,6 +57,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
 
 Handler = SimpleHTTPRequestHandler
+
 
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print(f"Serving at port {PORT}")
