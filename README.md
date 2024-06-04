@@ -25,3 +25,5 @@ python-input_output
 python-serialization
 
 restful-api
+
+devops_essentials
