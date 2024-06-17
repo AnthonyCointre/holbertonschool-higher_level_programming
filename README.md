@@ -27,3 +27,5 @@ python-serialization
 restful-api
 
 devops_essentials
+
+SQL_introduction
