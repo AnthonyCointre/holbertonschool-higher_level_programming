@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-list all states from the database hbtn_0e_0_usa.
+List all states from the database hbtn_0e_0_usa.
 """
 
 import MySQLdb
 import sys
 
 
-if __name__ == "__main__":
+def main():
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     db_name = sys.argv[3]
@@ -25,3 +25,7 @@ if __name__ == "__main__":
         print(row)
     cursor.close()
     db.close()
+
+
+if __name__ == "__main__":
+    main()
