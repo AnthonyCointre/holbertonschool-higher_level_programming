@@ -18,7 +18,7 @@ def main():
         user=mysql_username,
         passwd=mysql_password,
         db=database_name
-        )
+    )
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;"
     cursor.execute(query)
