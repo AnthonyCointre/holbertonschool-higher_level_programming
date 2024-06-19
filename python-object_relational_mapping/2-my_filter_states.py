@@ -21,8 +21,7 @@ def main():
         db=database_name
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(
-        state_name)
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC;".format(state_name)
     cursor.execute(query)
     rows = cursor.fetchall()
     for row in rows:
