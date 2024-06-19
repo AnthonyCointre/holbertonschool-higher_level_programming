@@ -21,8 +21,8 @@ def main():
         db=database_name
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC;"
-    cursor.execute(query, (state_name,))
+    query = f"SELECT * FROM states WHERE name = '{state_name}' ORDER BY id ASC;"
+    cursor.execute(query)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
