@@ -12,7 +12,8 @@ from model_city import City
 
 def main():
     if len(sys.argv) != 4:
-        print("""Usage: {}
+        print("""
+              Usage: {}
               <username>
               <password>
               <database_name>
