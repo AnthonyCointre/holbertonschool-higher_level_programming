@@ -31,7 +31,3 @@ def main():
         print(row)
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    main()
