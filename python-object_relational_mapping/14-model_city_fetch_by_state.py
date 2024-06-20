@@ -12,19 +12,18 @@ from model_city import City
 
 def main():
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost:3306/{}"
-        .format(argv[1], argv[2], argv[3]), pool_pre_ping=True
-    )
-    Base.metadata.crate_all = engine
-    DBSession = sessionmaker(bind=engine)
-    session = DBSession()
-    cities = session.query(City, State).\
+                'mysql+mysqldb://{}:{}@localhost:3306/{}'
+                .format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    rows = session.query(City, State).\
         filter(City.state_id == State.id).all()
-    for city, state in cities:
+    for city, state in rows:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.commit()
     session.close()
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
