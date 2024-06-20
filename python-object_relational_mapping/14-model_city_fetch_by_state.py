@@ -9,7 +9,6 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from model_city import City
 
-
 def main():
     if len(sys.argv) != 4:
         print("Usage: python 14-model_city_fetch_by_state.py <mysql_username> <mysql_password> <database_name>")
@@ -20,8 +19,7 @@ def main():
     database_name = sys.argv[3]
 
     # Database connection
-    engine = create_engine(
-        f"mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}")
+    engine = create_engine(f"mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}")
 
     # Bind the Base class to the engine
     Base.metadata.bind = engine
@@ -38,7 +36,6 @@ def main():
         print(f'{city.state.name}: ({city.id}) {city.name}')
 
     session.close()
-
 
 if __name__ == '__main__':
     main()
