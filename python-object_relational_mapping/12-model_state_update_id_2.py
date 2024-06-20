@@ -23,8 +23,8 @@ def main():
     session = Session()
     state = session.query(State).filter(State.id == 2).all()
     if state:
-        state.name = "New Mexico"
-        session.commit()
+        state[0].name = "New Mexico"
+    session.commit()
     session.close()
 
 
