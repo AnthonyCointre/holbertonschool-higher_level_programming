@@ -12,26 +12,24 @@ from model_city import City
 
 def main():
     if len(sys.argv) != 4:
-        print("""
-              Usage: {}
-              <mysql username>
-              <mysql password>
-              <database name>
+        print("""Usage: {}
+              <username>
+              <password>
+              <database_name>
               """.format(sys.argv[0])
               )
         sys.exit(1)
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine(
-        f"mysql+mysqldb://{mysql_username}:{mysql_password}"
-        f"@localhost:3306/{database_name}"
+        """
+        mysql+mysqldb://{}:{}@localhost:3306/{}
+        """.format(username, password, db_name), pool_pre_ping=True
     )
     Session = sessionmaker(bind=engine)
     session = Session()
     cities = session.query(City).order_by(City.id).all()
     for city in cities:
-        print(f"{city.state.name}: ({city.id}) {city.name}")
+        print("{}: ({}) {}".format(city.state.name, city.id, city.name))
     session.close()
 
 
