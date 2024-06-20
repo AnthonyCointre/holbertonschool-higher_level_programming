@@ -19,14 +19,14 @@ def main():
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
     engine = create_engine(
-        f'mysql+mysqldb: // {
+        f'mysql+mysqldb://{
             mysql_username
-        }: {
-            mysql_password
-        }@localhost: 3306/{
-            database_name
-        }'
-    )
+            }:{
+                mysql_password
+                }@localhost:3306/{
+                    database_name
+                    }'
+                           )
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).order_by(State.id).all()
