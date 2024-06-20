@@ -18,7 +18,8 @@ def main():
     Base.metadata.crate_all = engine
     DBSession = sessionmaker(bind=engine)
     session = DBSession()
-    cities = session.query(City, State).filter(City.state_id == State.id).all()
+    cities = session.query(City, State).\
+        filter(City.state_id == State.id).all()
     for city, state in cities:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.commit()
