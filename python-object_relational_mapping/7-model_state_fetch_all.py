@@ -20,9 +20,7 @@ def main():
     database_name = sys.argv[3]
     engine = create_engine(
         f"""
-        mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{
-            database_name
-            }
+        mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}
         """
     )
     Session = sessionmaker(bind=engine)
