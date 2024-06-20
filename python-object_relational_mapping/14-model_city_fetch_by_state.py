@@ -12,7 +12,7 @@ from model_city import City
 
 def main():
     if len(sys.argv) != 4:
-        print("Usage: python 14-model_city_fetch_by_state.py <mysql_username> <mysql_password> <database_name>")
+        print("Usage: {} <mysql_username> <mysql_password> <database_name>")
         sys.exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
