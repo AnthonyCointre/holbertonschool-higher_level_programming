@@ -22,7 +22,7 @@ def main():
         db=database_name
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC;"
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC;"
     cursor.execute(query, (state_name,))
     rows = cursor.fetchall()
     for row in rows:
