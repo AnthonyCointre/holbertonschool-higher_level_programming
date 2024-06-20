@@ -29,8 +29,8 @@ def main():
         FROM states
         WHERE name = %s
         ORDER BY states.id ASC
-        """
-        ,(state_name_searched, )
+        """,
+        (state_name_searched, )
     )
     query_rows = cur.fetchall()
     for row in query_rows:
