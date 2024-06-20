@@ -25,14 +25,16 @@ class State(Base):
 def main():
     if len(sys.argv) != 4:
         print("""
-              Usage:./model_state.py <mysql username>
-              <mysql password> <database name>
+              Usage:./model_state.py
+              <mysql username>
+              <mysql password>
+              <database name>
               """
               )
         sys.exit(1)
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost/{db_name}',
-        pool_pre_ping=True
+        f"mysql+mysqldb://{username}:{password}"
+        f"@localhost/{db_name}", pool_pre_ping=True
     )
     Base.metadata.create_all(engine)
