@@ -31,3 +31,5 @@ devops_essentials
 SQL_introduction
 
 SQL_more_queries
+
+python-object_relational_mapping
