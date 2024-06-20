@@ -30,10 +30,9 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    cities = session.query(City, State).\
-        filter(City.state_id == State.id).all()
+    cities = session.query(City, State).filter(City.state_id == State.id).all()
     for city, state in cities:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+        print(f"{state.name}: ({city.id}) {city.name}")
     session.commit()
     session.close()
 
