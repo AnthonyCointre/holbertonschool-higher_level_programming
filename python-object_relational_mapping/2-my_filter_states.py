@@ -27,7 +27,7 @@ def main():
         SELECT *
         FROM states
         WHERE name LIKE BINARY '{}'
-        ORDER BY states.id ASC
+        ORDER BY states.id ASC;
         """
     ).format(state_name_searched)
     query_rows = cur.fetchall()
