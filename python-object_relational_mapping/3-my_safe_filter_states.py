@@ -30,7 +30,7 @@ def main():
         WHERE name = %s
         ORDER BY states.id ASC
         """
-        .format(state_name_searched)
+        ,(state_name_searched)
     )
     query_rows = cur.fetchall()
     for row in query_rows:
