@@ -30,7 +30,8 @@ def main():
     )
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if row[1].startswith("N"):
+            print(row)
     cur.close()
     conn.close()
 
