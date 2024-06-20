@@ -12,6 +12,7 @@ def main():
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
+    state_name_searched = argv[4]
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -28,7 +29,7 @@ def main():
         WHERE name LIKE BINARY '{}'
         ORDER BY states.id ASC
         """
-    ).format(argv[4])
+    ).format(state_name_searched)
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
