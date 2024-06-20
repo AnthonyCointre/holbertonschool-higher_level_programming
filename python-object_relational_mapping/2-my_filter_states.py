@@ -5,32 +5,35 @@ hbtn_0e_0_usa where name matches the argument.
 """
 
 import MySQLdb
-import sys
+from sys import argv
 
 
 def main():
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
-    db = MySQLdb.connect(
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    database_name = argv[3]
+    conn = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
         passwd=mysql_password,
-        db=database_name
+        db=database_name,
+        charset="utf8"
     )
-    cursor = db.cursor()
-    query = (
-        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC;"
-        .format(state_name)
+    cur = conn.cursor()
+    cur.execute(
+        """
+        SELECT *
+        FROM states
+        WHERE name LIKE BINARY '{}'
+        ORDER BY states.id ASC
+        """
     )
-    cursor.execute(query)
-    rows = cursor.fetchall()
-    for row in rows:
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-    cursor.close()
-    db.close()
+    cur.close()
+    conn.close()
 
 
 if __name__ == "__main__":
