@@ -33,7 +33,8 @@ def main():
         (state_name, )
     )
     query_rows = cur.fetchall()
-    print(", ".join([row[0] for row in query_rows]))
+    city_names = (row[0] for row in query_rows)
+    print(", ".join(city_names))
     cur.close()
     conn.close()
 
