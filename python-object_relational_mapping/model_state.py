@@ -25,7 +25,8 @@ class State(Base):
 def main():
     if len(sys.argv) != 4:
         print("""
-              Usage:./model_state.py <mysql username> <mysql password> <database name>
+              Usage:./model_state.py <mysql username>
+              <mysql password> <database name>
               """
               )
         sys.exit(1)
@@ -35,7 +36,3 @@ def main():
         pool_pre_ping=True
     )
     Base.metadata.create_all(engine)
-
-
-if __name__ == "__main__":
-    main()
