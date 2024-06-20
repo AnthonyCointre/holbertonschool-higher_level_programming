@@ -29,7 +29,7 @@ def main():
         WHERE name LIKE BINARY '{}'
         ORDER BY states.id ASC
         """
-    )
+    ).format(argv[4])
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
