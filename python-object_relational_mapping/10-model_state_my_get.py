@@ -13,13 +13,13 @@ from model_state import Base, State
 def main():
     if len(sys.argv) != 5:
         print("""
-              Usage: {} <mysql username>
+              Usage: {}
+              <mysql username>
               <mysql password>
               <database name>
               <state name>
-              """.format(
-            sys.argv[0])
-        )
+              """.format(sys.argv[0])
+              )
         sys.exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
