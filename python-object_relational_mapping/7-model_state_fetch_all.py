@@ -11,25 +11,36 @@ from model_state import Base, State
 
 def main():
     if len(sys.argv) != 4:
-        print("""
-              Usage: {} <mysql username> <mysql password> <database name>
-              """.format(sys.argv[0])
+        print(f"""
+              Usage: {sys.argv[0]} <mysql username>
+              <mysql password> <database name>
+              """
               )
         sys.exit(1)
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    engine = create_engine(
-        f"""
-        mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}
-        """
-    )
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    states = session.query(State).order_by(State.id).all()
-    for state in states:
-        print(f"{state.id}: {state.name}")
-    session.close()
+
+    try:
+        engine = create_engine(
+            f"""
+            mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}
+""",
+            pool_pre_ping=True
+        )
+        Session = sessionmaker(bind=engine)
+        session = Session()
+
+        states = session.query(State).order_by(State.id).all()
+        for state in states:
+            print(f"{state.id}: {state.name}")
+
+        session.close()
+
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
