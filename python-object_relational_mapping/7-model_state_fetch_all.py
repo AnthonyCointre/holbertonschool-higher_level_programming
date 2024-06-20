@@ -11,8 +11,10 @@ from model_state import Base, State
 
 def main():
     if len(sys.argv) != 4:
-        print("""
-              Usage: {} <mysql username> <mysql password> <database name>
+        print("""Usage: {}
+              <mysql username>
+              <mysql password>
+              <database name>
               """.format(
             sys.argv[0])
         )
@@ -22,7 +24,7 @@ def main():
     database_name = sys.argv[3]
     engine = create_engine(
         f'mysql+mysqldb: // {mysql_username}:
-        {mysql_password}@localhost: 3306 / {database_name}'
+        {mysql_password}@localhost: 3306/{database_name}'
     )
     Session = sessionmaker(bind=engine)
     session = Session()
