@@ -13,7 +13,8 @@ def main():
     if len(sys.argv) != 4:
         print("""
               Usage: {} <mysql username> <mysql password> <database name>
-              """.format(sys.argv[0]))
+              """.format(sys.argv[0])
+              )
         sys.exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
