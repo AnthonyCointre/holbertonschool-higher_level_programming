@@ -12,13 +12,21 @@ from model_city import City
 
 def main():
     if len(sys.argv) != 4:
-        print("Usage: {} <mysql_username> <mysql_password> <database_name>")
+        print("""
+              Usage: {}
+              <mysql_username>
+              <mysql_password>
+              <database_name>
+              """.format(sys.argv[0])
+              )
         sys.exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
     engine = create_engine(
-        f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}')
+        f"mysql+mysqldb://{mysql_username}:{mysql_password}"
+        f"@localhost:3306/{database_name}"
+    )
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
