@@ -4,27 +4,34 @@ List all states from the database hbtn_0e_0_usa.
 """
 
 import MySQLdb
-import sys
+from sys import argv
 
 
 def main():
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
-    db = MySQLdb.connect(
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    database_name = argv[3]
+    conn = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
         passwd=mysql_password,
-        db=db_name
+        db=database_name,
+        charset="utf8"
     )
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    rows = cursor.fetchall()
-    for row in rows:
+    cur = conn.cursor()
+    cur.execute(
+        """
+        SELECT *
+        FROM states
+        ORDER BY id ASC
+        """
+    )
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-    cursor.close()
-    db.close()
+    cur.close()
+    conn.close()
 
 
 if __name__ == "__main__":
