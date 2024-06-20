@@ -23,10 +23,10 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(
-        State.name == state_name_to_search).all()
+    state = session.query(State).\
+        filter(State.name == state_name_to_search).order_by(State.id).all()
     if state:
-        print(state.id)
+        print("{}".format(state[0].id))
     else:
         print("Not found")
     session.close()
