@@ -1,6 +1,5 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 import json
-import os
 
 app = Flask(__name__)
 
@@ -22,10 +21,13 @@ def contact():
 
 @app.route('/items')
 def items():
-    json_file_path = os.path.join(os.path.dirname(__file__), 'items.json')
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-    items = data.get('items', [])
+    try:
+        json_file_path = 'items.json'
+        with open(json_file_path) as file:
+            data = json.load(file)
+            items = data.get("items", [])
+    except FileNotFoundError:
+        items = []
     return render_template('items.html', items=items)
 
 
