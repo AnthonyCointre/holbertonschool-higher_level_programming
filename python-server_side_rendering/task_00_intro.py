@@ -1,10 +1,11 @@
-import os
 """
 Create a Python function that generates personalized invitation files from a
 template with placeholders and a list of objects.
 Each output file should be named sequentially, starting from 1.
 Implement specific error handling for various edge cases.
 """
+
+import os
 
 
 def generate_invitations(template, attendees):
