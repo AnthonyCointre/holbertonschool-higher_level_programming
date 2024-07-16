@@ -84,7 +84,10 @@ def products():
     if product_id and not products:
         error = "Product not found."
 
-    return render_template('product_display.html', products=products, error=error)
+    return render_template(
+        'product_display.html',
+        products=products, error=error
+    )
 
 
 if __name__ == '__main__':
