@@ -1,3 +1,10 @@
+"""
+Enhance the Flask application by integrating dynamic content into the HTML
+templates using Jinja's loop and conditional constructs.
+Read a list of items from a JSON file and display them dynamically
+on a web page.
+"""
+
 from flask import Flask, render_template
 import json
 
