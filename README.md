@@ -33,3 +33,5 @@ SQL_introduction
 SQL_more_queries
 
 python-object_relational_mapping
+
+python-server_side_rendering

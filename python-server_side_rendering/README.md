@@ -1,9 +1,9 @@
-task_00_intro.py = 
+task_00_intro.py = créer une fonction Python qui génère des fichiers d'invitation personnalisés à partir d'un modèle avec des espaces réservés et une liste d'objets. Chaque fichier de sortie doit être nommé de manière séquentielle, en commençant par 1. Implémenter une gestion des erreurs spécifique pour divers cas extrêmes.
 
-task_01_jinja.py = 
+task_01_jinja.py = créer une application Flask de base qui sert une page Web à l'aide d'un modèle Jinja. Créer un modèle HTML simple comprenant divers éléments tels que des titres, des paragraphes et des listes, et apprendre à le restituer sous forme de page Web à l'aide de Flask. De plus, apprendre à créer des modèles réutilisables pour les en-têtes et les pieds de page afin de promouvoir la réutilisation et la cohérence du code sur plusieurs pages.
 
-task_02_logic.py = 
+task_02_logic.py = améliorer l'application Flask en intégrant du contenu dynamique dans vos modèles HTML à l'aide de la boucle et des constructions conditionnelles de Jinja. Lire une liste d’éléments d’un fichier JSON et les afficherez dynamiquement sur une page Web.
 
-task_03_files.py = 
+task_03_files.py = Créer une fonctionnalité dans l'application Flask pour lire et afficher les données produit à partir de deux formats de données différents : JSON et CSV. Créer un modèle HTML unique pouvant afficher les données de l'un ou l'autre type de fichier, en fonction d'un paramètre de requête fourni dans l'URL. Ajouter des fonctionnalités à l'application Flask pour filtrer les données produit en fonction d'un paramètre de requête d'identification facultatif. De plus, gérer les cas extrêmes tels que les valeurs de paramètres source non valides ou lorsque l'identifiant spécifié n'est pas trouvé dans les données.
 
-task_04_db.py = 
+task_04_db.py = En s'appuyant sur l'exercice précédent, ajouter la fonctionnalité permettant de récupérer et d'afficher les données d'une base de données SQLite dans l'application Flask. L'application doit permettre aux utilisateurs de choisir entre JSON, CSV et SQL (base de données SQLite) comme sources de données à l'aide du paramètre de requête source.
