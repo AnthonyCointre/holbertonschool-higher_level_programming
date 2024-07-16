@@ -1,3 +1,14 @@
+"""
+Build a feature in the Flask application to read and display product data from
+two different data formats: JSON and CSV.
+Create a single HTML template that can display data from either file type,
+depending on a query parameter provided in the URL.
+Add functionality to the Flask application to filter product data based on
+an optional id query parameter.
+Additionally, handle edge cases such as invalid source parameter values or
+when the specified id is not found in the data.
+"""
+
 from flask import Flask, render_template, request
 import json
 import csv
@@ -42,7 +53,10 @@ def products():
             with open(file_path) as file:
                 products = json.load(file)
         except FileNotFoundError:
-            return render_template('product_display.html', error="JSON file not found.")
+            return render_template(
+                'product_display.html',
+                error="JSON file not found."
+            )
     elif source == 'csv':
         file_path = 'products.csv'
         try:
@@ -53,14 +67,23 @@ def products():
                     product['id'] = int(product['id'])
                     product['price'] = float(product['price'])
         except FileNotFoundError:
-            return render_template('product_display.html', error="CSV file not found.")
+            return render_template(
+                'product_display.html',
+                error="CSV file not found."
+            )
     else:
-        return render_template('product_display.html', error="Wrong source parameter. Use 'json' or 'csv'.")
+        return render_template(
+            'product_display.html',
+            error="Wrong source parameter. Use 'json' or 'csv'."
+        )
     if product_id:
         products = [
             product for product in products if product['id'] == product_id]
         if not products:
-            return render_template('product_display.html', error="Product not found.")
+            return render_template(
+                'product_display.html',
+                error="Product not found."
+            )
     return render_template('product_display.html', products=products)
 
 
