@@ -23,3 +23,9 @@
 11-multiply_list_map.py = renvoyer une liste avec toutes les valeurs multipliées par un nombre sans utiliser de boucles.
 
 12-roman_to_int.py = convertir un chiffre romain en nombre entier.
+
+100-weight_average.py = renvoyer la moyenne pondérée de tous les tuples entiers (<score>, <weight>).
+
+101-square_matrix_map.py = calculer la valeur carrée de tous les entiers d'une matrice à l'aide de la carte.
+
+102-complex_delete.py = supprimer les clés avec une valeur spécifique dans un dictionnaire.
