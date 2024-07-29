@@ -23,3 +23,7 @@
 11-pow.py = calculer a à la puissance b et renvoie la valeur.
 
 12-fizzbuzz.py = imprimer les nombres de 1 à 100 séparés par un espace.
+
+100-print_tebahpla.py = imprimer l'alphabet ASCII, dans l'ordre inverse, en alternant minuscules et majuscules (z en minuscule et Y en majuscule), non suivi d'une nouvelle ligne.
+
+101-remove_char_at.py = créer une copie de la chaîne, en supprimant le caractère à la position n (pas à la manière de Python, « l'index du tableau C »).
