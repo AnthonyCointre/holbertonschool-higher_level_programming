@@ -9,3 +9,11 @@
 4-hidden_discovery.py = imprime tous les noms définis par le module compilé hidden_4.pyc.
 
 5-variable_load.py = importer la variable a du fichier variable_load_5.py et imprime sa valeur.
+
+100-my_calculator.py = importer toutes les fonctions du fichier calculator_1.py et gérer les opérations de base.
+
+101-easy_print.py = imprimer #pythoniscool, suivi d'une nouvelle ligne, dans la sortie standard.
+
+102-magic_calculation.py = la fonction Python def magic_calculation(a, b):
+
+103-fast_alphabet.py = imprimer l'alphabet en majuscule, suivi d'une nouvelle ligne.
