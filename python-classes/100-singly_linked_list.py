@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 class Node:
     def __init__(self, data, next_node=None):
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -36,15 +36,15 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             current = self.__head
-            while current.next_node is not None and current.next_node.data < value:
+            while (current.next_node is not None and current.next_node.data < value):
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
-        values = []
+        result = []
         current = self.__head
         while current:
-            values.append(str(current.data))
+            result.append(str(current.data))
             current = current.next_node
-        return "\n".join(values)
+        return "\n".join(result)
