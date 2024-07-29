@@ -11,3 +11,9 @@
 5-raise_exception.py = générer une exception de type.
 
 6-raise_exception_msg.py = générer une exception de nom avec un message.
+
+100-safe_print_integer_err.py = imprimer un entier.
+
+101-safe_function.py = exécuter une fonction en toute sécurité.
+
+102-magic_calculation.py = la fonction Python def magic_calculation(a, b) :
